@@ -1,0 +1,47 @@
+.sr-only {
+    position: absolute;
+    size: 0px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.rotating-text {
+    display: inline-block;
+    animation: slideFade 3s ease-in-out infinite;
+}
+
+.rotating-text::after {
+    content: attr(data-text);
+}
+
+@keyframes slideFade {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    35% {
+        transform: translateY(0px);
+        opacity: 0.75;
+    }
+    45% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    65% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(0px);
+        opacity: 0.75;
+    }
+    100% {
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+}
