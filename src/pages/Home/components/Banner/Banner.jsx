@@ -52,23 +52,21 @@ const Banner = () => {
         nonProfitSmallestImg,
     ];
 
-    const industry = ['CRE', 'Healthcare', 'Nonprofit'];
-    const [i, setI] = useState(0);
+    const industryText = ['CRE', 'Healthcare', 'Nonprofit'];
     const rotatingText = useRef(null);
     const rotatingMainImg = useRef(null);
     const rotatingSmallerImg = useRef(null);
     const rotatingSmallImg = useRef(null);
     const rotatingSmallestImg = useRef(null);
 
+    const [i, setI] = useState(0);
+
     useEffect(() => {
         const e = rotatingText.current;
 
-        const incrementI = () => setI((i + 1) % industry.length);
+        const incrementI = () => setI((i + 1) % industryText.length);
 
         e.addEventListener('animationiteration', incrementI);
-
-
-        console.log(i)
         return () =>
             e.removeEventListener('animationiteration', incrementI);
     }, [i]);
@@ -84,7 +82,7 @@ const Banner = () => {
                     <span
                         aria-hidden="true"
                         className="rotating-text"
-                        data-text={industry[i]}
+                        data-text={industryText[i]}
                         ref={rotatingText}
                     ></span>
                     <br />
