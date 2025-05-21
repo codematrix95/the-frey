@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-// import RotatingText from './components/RotatingText/RotatingText';
 import './banner.css';
 
 const Banner = () => {
@@ -53,22 +52,65 @@ const Banner = () => {
     ];
 
     const industryText = ['CRE', 'Healthcare', 'Nonprofit'];
+
     const rotatingText = useRef(null);
     const rotatingMainImg = useRef(null);
     const rotatingSmallerImg = useRef(null);
     const rotatingSmallImg = useRef(null);
     const rotatingSmallestImg = useRef(null);
 
-    const [i, setI] = useState(0);
+    const animateElement = [
+        rotatingText,
+        rotatingMainImg,
+        rotatingSmallerImg,
+        rotatingSmallImg,
+        rotatingSmallestImg,
+    ];
+
+    const [i, setSlide] = useState(0);
 
     useEffect(() => {
-        const e = rotatingText.current;
+        const animationStart = async (ref) => {
+            return new Promise((resolve) =>
+                ref.current.addEventListener('animationend', resolve, {
+                    once: true,
+                })
+            );
+        };
 
-        const incrementI = () => setI((i + 1) % industryText.length);
+        const runAnimation = async (anim, animFunc) => {
+            for (const [i, ref] of animateElement.entries()) {
+                if (ref?.current) {
+                    ref.current.classList.add(anim);
+                    i > 0 ? await animFunc(ref) : false;
+                }
+            }
+        };
 
-        e.addEventListener('animationiteration', incrementI);
-        return () =>
-            e.removeEventListener('animationiteration', incrementI);
+        const nextSlide = async () => {
+            const ref = animateElement.at(-1).current;
+
+            if (ref.classList.contains('slide-fade-out')) {
+                setSlide((i + 1) % industryText.length);
+                animateElement.forEach((ref) => {
+                    ref.current.classList.remove(
+                        'slide-fade-in',
+                        'slide-fade-out'
+                    );
+                });
+            }
+        };
+
+        const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+        const startSlide = async () => {
+            await runAnimation('slide-fade-in', animationStart);
+            await delay(2000);
+            await runAnimation('slide-fade-out', animationStart);
+            await nextSlide();
+        };
+
+        startSlide();
     }, [i]);
 
     return (
@@ -82,6 +124,7 @@ const Banner = () => {
                     <span
                         aria-hidden="true"
                         className="rotating-text"
+                        // className="rotating-text"
                         data-text={industryText[i]}
                         ref={rotatingText}
                     ></span>

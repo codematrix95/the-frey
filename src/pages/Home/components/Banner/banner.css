@@ -6,7 +6,7 @@
 
 .rotating-text {
     display: inline-block;
-    animation: slideFade 3s ease-in-out infinite;
+    opacity: 0;
 }
 
 .rotating-text::after {
@@ -21,11 +21,11 @@
 }
 
 .main-img {
-    grid-column: 1;
-    grid-row: 1;
-    padding-left: 75px;
+    grid-area: 1 / 1;
+    padding: 15px 10px 15px 50px;
     width: 600px;
     height: auto;
+    opacity: 0;
     z-index: 0;
 }
 
@@ -35,22 +35,24 @@
     position: relative;
     width: 150px;
     height: auto;
+    opacity: 0;
     z-index: 1;
 }
 
-/* Offset each stacked image */
 .img-1 {
-    left: 50px;
     top: 8px;
+    left: 25px;
+    justify-self: start;
 }
 
 .img-2 {
-    left: 25px;
     top: 12px;
+    justify-self: start;
 }
 
 .img-3 {
-    top: 16px;
+    top: 12px;
+    justify-self: end;
 }
 
 @media (width < 600px) {
@@ -73,79 +75,32 @@
     }
 }
 
-@keyframes slideFade {
-    0% {
-        transform: translateY(15px);
-        opacity: 0;
-    }
-    35% {
-        transform: translateY(0px);
-        opacity: 0.75;
-    }
-    45% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-    65% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-    75% {
-        transform: translateY(0px);
-        opacity: 0.75;
-    }
-    100% {
-        transform: translateY(-15px);
-        opacity: 0;
-    }
-}
-
 .slide-fade-in {
-  animation: slide-fade-in 3s ease-in-out forwards;
+    animation: slideFadeIn 500ms ease-in-out forwards;
 }
 
-@keyframes slide-fade-in {
+@keyframes slideFadeIn {
     0% {
-        transform: translateY(15px);
         opacity: 0;
-    }
-    35% {
-        transform: translateY(0px);
-        opacity: 0.75;
-    }
-    45% {
-        transform: translateY(0px);
-        opacity: 1;
+        transform: translateY(15px);
     }
     100% {
-        transform: translateY(0px);
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.slideFadeOut {
-  animation: slideFadeOut 3s ease-in-out;
+.slide-fade-out {
+    animation: slideFadeOut 500ms ease-in-out forwards;
 }
 
 @keyframes slideFadeOut {
     0% {
-        transform: translateY(0px);
         opacity: 1;
-    }
-    65% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-    75% {
-        transform: translateY(0px);
-        opacity: 0.75;
+        transform: translateY(0);
     }
     100% {
-        transform: translateY(-15px);
         opacity: 0;
+        transform: translateY(-15px);
     }
 }
