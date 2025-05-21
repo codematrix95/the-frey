@@ -7,20 +7,18 @@ import cantigny from './js/variables/cantigny';
 import './banner.css';
 
 const Banner = () => {
-    const industryText = ['CRE', 'Healthcare', 'Nonprofit'];
+    const brand = useRef(null);
+    const desktopImg = useRef(null);
+    const mobileImg = useRef(null);
+    const mobileMenuImg = useRef(null);
+    const shopModuleImg = useRef(null);
 
-    const rotatingText = useRef(null);
-    const rotatingMainImg = useRef(null);
-    const rotatingSmallerImg = useRef(null);
-    const rotatingSmallImg = useRef(null);
-    const rotatingSmallestImg = useRef(null);
-
-    const animateElement = [
-        rotatingText,
-        rotatingMainImg,
-        rotatingSmallerImg,
-        rotatingSmallImg,
-        rotatingSmallestImg,
+    const animateRef = [
+        brand,
+        desktopImg,
+        mobileImg,
+        mobileMenuImg,
+        shopModuleImg,
     ];
 
     const [i, setSlide] = useState(0);
@@ -36,7 +34,7 @@ const Banner = () => {
         };
 
         const runAnimation = async (anim, animFunc) => {
-            for (const [i, ref] of animateElement.entries()) {
+            for (const [i, ref] of animateRef.entries()) {
                 if (ref?.current) {
                     ref.current.classList.add(anim);
                     i > 0 ? await animFunc(ref) : false;
@@ -45,11 +43,11 @@ const Banner = () => {
         };
 
         const nextSlide = async () => {
-            const ref = animateElement.at(-1).current;
+            const ref = animateRef.at(-1).current;
 
             if (ref.classList.contains('slide-fade-out')) {
-                setSlide((i + 1) % industryText.length);
-                animateElement.forEach((ref) => {
+                setSlide((i + 1) % brands.length);
+                animateRef.forEach((ref) => {
                     ref.current.classList.remove(
                         'slide-fade-in',
                         'slide-fade-out'
@@ -79,11 +77,10 @@ const Banner = () => {
                         Healthcare, CRE, and Nonprofit
                     </span>{' '}
                     <span
+                        ref={brand}
+                        data-text={brands[i][0]}
                         aria-hidden="true"
                         className="rotating-text"
-                        // className="rotating-text"
-                        data-text={brands[i][0]}
-                        ref={rotatingText}
                     ></span>
                     <br />
                     Brands Through Exceptional Design
@@ -91,25 +88,25 @@ const Banner = () => {
                 <div className="d-flex justify-content-center col-12">
                     <div className="rotating-imgs-grid">
                         <img
-                            ref={rotatingMainImg}
+                            ref={desktopImg}
                             src={brands[i][1]}
                             alt="Spearfish Mountain ranch website landing page"
                             className="main-img"
                         />
                         <img
-                            ref={rotatingSmallerImg}
+                            ref={mobileImg}
                             src={brands[i][2]}
                             alt=""
                             className="stack-img img-1"
                         />
                         <img
-                            ref={rotatingSmallImg}
+                            ref={mobileMenuImg}
                             src={brands[i][3]}
                             alt=""
                             className="stack-img img-2"
                         />
                         <img
-                            ref={rotatingSmallestImg}
+                            ref={shopModuleImg}
                             src={brands[i][4]}
                             alt=""
                             className="stack-img img-3"
