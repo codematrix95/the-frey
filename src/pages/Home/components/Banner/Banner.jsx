@@ -4,7 +4,9 @@ import spearFish from './js/variables/spearFish';
 import janus from './js/variables/janus';
 import cantigny from './js/variables/cantigny';
 
-import './banner.css';
+import slideAnimation from './js/helpers/slideAnimation.js';
+
+import './Banner.scss';
 
 const Banner = () => {
     const brand = useRef(null);
@@ -25,47 +27,7 @@ const Banner = () => {
     const brands = [spearFish, janus, cantigny];
 
     useEffect(() => {
-        const animationStart = async (ref) => {
-            return new Promise((resolve) =>
-                ref.current.addEventListener('animationend', resolve, {
-                    once: true,
-                })
-            );
-        };
-
-        const runAnimation = async (anim, animFunc) => {
-            for (const [i, ref] of animateRef.entries()) {
-                if (ref?.current) {
-                    ref.current.classList.add(anim);
-                    i > 0 ? await animFunc(ref) : false;
-                }
-            }
-        };
-
-        const nextSlide = async () => {
-            const ref = animateRef.at(-1).current;
-
-            if (ref.classList.contains('slide-fade-out')) {
-                setSlide((i + 1) % brands.length);
-                animateRef.forEach((ref) => {
-                    ref.current.classList.remove(
-                        'slide-fade-in',
-                        'slide-fade-out'
-                    );
-                });
-            }
-        };
-
-        const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-        const startSlide = async () => {
-            await runAnimation('slide-fade-in', animationStart);
-            await delay(2000);
-            await runAnimation('slide-fade-out', animationStart);
-            await nextSlide();
-        };
-
-        startSlide();
+        slideAnimation(i, animateRef, setSlide, brands);
     }, [i]);
 
     return (
@@ -83,33 +45,39 @@ const Banner = () => {
                         className="rotating-text"
                     ></span>
                     <br />
-                    Brands Through Exceptional Design
+                    Brands Through
+                    <br />
+                    Exceptional <span className="pe-4">Design</span>
                 </h2>
-                <div className="d-flex justify-content-center col-12">
+                <div className="d-flex justify-content-center">
                     <div className="rotating-imgs-grid">
                         <img
                             ref={desktopImg}
                             src={brands[i][1]}
-                            alt="Spearfish Mountain ranch website landing page"
-                            className="main-img"
+                            alt="Desktop web design by Frey Design Group"
+                            className="desktop-img"
+                            fetchPriority="high"
                         />
                         <img
                             ref={mobileImg}
                             src={brands[i][2]}
-                            alt=""
-                            className="stack-img img-1"
+                            alt="Mobile web design by Frey Design Group"
+                            className="mobile-img"
+                            fetchPriority="high"
                         />
                         <img
                             ref={mobileMenuImg}
                             src={brands[i][3]}
-                            alt=""
-                            className="stack-img img-2"
+                            alt="Mobile menu web design by Frey Design Group"
+                            className="mobile-menu-img"
+                            fetchPriority="high"
                         />
                         <img
                             ref={shopModuleImg}
                             src={brands[i][4]}
-                            alt=""
-                            className="stack-img img-3"
+                            alt="Shop module web design by Frey Design Group"
+                            className="shop-module-img"
+                            fetchPriority="high"
                         />
                     </div>
                 </div>
