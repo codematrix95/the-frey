@@ -1,74 +1,33 @@
 import { useEffect, useRef, useState } from 'react';
-// import RotatingText from './components/RotatingText/RotatingText';
-import './banner.css';
+
+import spearFish from './js/variables/spearFish';
+import janus from './js/variables/janus';
+import cantigny from './js/variables/cantigny';
+
+import slideAnimation from './js/helpers/slideAnimation.js';
+
+import './Banner.scss';
 
 const Banner = () => {
-    const creMainImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/01_Home.jpg';
-    const healthCareMainImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/01_Home-1.jpg';
-    const nonProfitMainImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2019/12/Cantigny-Homepage-Design.jpg';
-    const industryMainImg = [creMainImg, healthCareMainImg, nonProfitMainImg];
+    const brand = useRef(null);
+    const desktopImg = useRef(null);
+    const mobileImg = useRef(null);
+    const mobileMenuImg = useRef(null);
+    const shopModuleImg = useRef(null);
 
-    const creSmallerImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/02_Home.jpg';
-    const healthCareSmallerImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/02_Home-3.jpg';
-    const nonProfitSmallerImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2019/12/Cantigny-CTA-Module-Section.jpg';
-
-    const industrySmallerImg = [
-        creSmallerImg,
-        healthCareSmallerImg,
-        nonProfitSmallerImg,
+    const animateRef = [
+        brand,
+        desktopImg,
+        mobileImg,
+        mobileMenuImg,
+        shopModuleImg,
     ];
 
-    const creSmallImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/04-Home.jpg';
-    const healthCareSmallImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/04_Home-1.jpg';
-    const nonProfitSmallImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2019/12/Cantigny-Social-Media-Widget.jpg';
-
-    const industrySmallImg = [
-        creSmallImg,
-        healthCareSmallImg,
-        nonProfitSmallImg,
-    ];
-
-    const creSmallestImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/03-Home-1.jpg';
-
-    const healthCareSmallestImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/03_Home-1.jpg';
-
-    const nonProfitSmallestImg =
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2019/12/Cantigny-Shop-Module.jpg';
-
-    const industrySmallestImg = [
-        creSmallestImg,
-        healthCareSmallestImg,
-        nonProfitSmallestImg,
-    ];
-
-    const industryText = ['CRE', 'Healthcare', 'Nonprofit'];
-    const rotatingText = useRef(null);
-    const rotatingMainImg = useRef(null);
-    const rotatingSmallerImg = useRef(null);
-    const rotatingSmallImg = useRef(null);
-    const rotatingSmallestImg = useRef(null);
-
-    const [i, setI] = useState(0);
+    const [i, setSlide] = useState(0);
+    const brands = [spearFish, janus, cantigny];
 
     useEffect(() => {
-        const e = rotatingText.current;
-
-        const incrementI = () => setI((i + 1) % industryText.length);
-
-        e.addEventListener('animationiteration', incrementI);
-        return () =>
-            e.removeEventListener('animationiteration', incrementI);
+        slideAnimation(i, animateRef, setSlide, brands);
     }, [i]);
 
     return (
@@ -80,39 +39,45 @@ const Banner = () => {
                         Healthcare, CRE, and Nonprofit
                     </span>{' '}
                     <span
+                        ref={brand}
+                        data-text={brands[i][0]}
                         aria-hidden="true"
                         className="rotating-text"
-                        data-text={industryText[i]}
-                        ref={rotatingText}
                     ></span>
                     <br />
-                    Brands Through Exceptional Design
+                    Brands Through
+                    <br />
+                    Exceptional <span className="pe-4">Design</span>
                 </h2>
-                <div className="d-flex justify-content-center col-12">
+                <div className="d-flex justify-content-center">
                     <div className="rotating-imgs-grid">
                         <img
-                            ref={rotatingMainImg}
-                            src={industryMainImg[i]}
-                            alt="Spearfish Mountain ranch website landing page"
-                            className="main-img"
+                            ref={desktopImg}
+                            src={brands[i][1]}
+                            alt="Desktop web design by Frey Design Group"
+                            className="desktop-img"
+                            fetchPriority="high"
                         />
                         <img
-                            ref={rotatingSmallerImg}
-                            src={industrySmallerImg[i]}
-                            alt=""
-                            className="stack-img img-1"
+                            ref={mobileImg}
+                            src={brands[i][2]}
+                            alt="Mobile web design by Frey Design Group"
+                            className="mobile-img"
+                            fetchPriority="high"
                         />
                         <img
-                            ref={rotatingSmallImg}
-                            src={industrySmallImg[i]}
-                            alt=""
-                            className="stack-img img-2"
+                            ref={mobileMenuImg}
+                            src={brands[i][3]}
+                            alt="Mobile menu web design by Frey Design Group"
+                            className="mobile-menu-img"
+                            fetchPriority="high"
                         />
                         <img
-                            ref={rotatingSmallestImg}
-                            src={industrySmallestImg[i]}
-                            alt=""
-                            className="stack-img img-3"
+                            ref={shopModuleImg}
+                            src={brands[i][4]}
+                            alt="Shop module web design by Frey Design Group"
+                            className="shop-module-img"
+                            fetchPriority="high"
                         />
                     </div>
                 </div>
