@@ -4,31 +4,26 @@ import spearFish from './js/brands/spearFish.js';
 import janus from './js/brands/janus.js';
 import cantigny from './js/brands/cantigny.js';
 
-import slideAnimation from './js/helpers/slideAnimation.js';
+import slideAnimation from './js/helpers/slideAnimation/slideAnimation.js';
 
 import './Banner.scss';
 
 const Banner = () => {
-    const name = useRef(null);
-    const desktopImg = useRef(null);
-    const mobileImg = useRef(null);
-    const mobileMenuImg = useRef(null);
-    const shopModuleImg = useRef(null);
+    const ref = useRef({
+        name: null,
+        desktopImg: null,
+        mobileImg: null,
+        mobileMenuImg: null,
+        shopModuleImg: null,
+    });
 
-    const animateRef = [
-        name,
-        desktopImg,
-        mobileImg,
-        mobileMenuImg,
-        shopModuleImg,
-    ];
-
-    const [i, setSlide] = useState(0);
+    const setRef = (key) => (e) => (ref.current[key] = e);
+    const [slide, setSlide] = useState(0);
     const brand = [spearFish, janus, cantigny];
 
     useEffect(() => {
-        slideAnimation(i, animateRef, setSlide, brand);
-    }, [i]);
+        slideAnimation(slide, ref, setSlide, brand);
+    }, [slide]);
 
     return (
         <>
@@ -39,8 +34,8 @@ const Banner = () => {
                         Healthcare, CRE, and Nonprofit
                     </span>{' '}
                     <span
-                        ref={name}
-                        data-text={brand[i].name}
+                        ref={setRef('name')}
+                        data-text={brand[slide].name}
                         aria-hidden="true"
                         className="rotating-text"
                     ></span>
@@ -52,29 +47,29 @@ const Banner = () => {
                 <div className="d-flex justify-content-center">
                     <div className="rotating-imgs-grid">
                         <img
-                            ref={desktopImg}
-                            src={brand[i].desktopImg}
+                            ref={setRef('desktopImg')}
+                            src={brand[slide].desktopImg}
                             alt="Desktop web design by Frey Design Group"
                             className="desktop-img"
                             fetchPriority="high"
                         />
                         <img
-                            ref={mobileImg}
-                            src={brand[i].mobileImg}
+                            ref={setRef('mobileImg')}
+                            src={brand[slide].mobileImg}
                             alt="Mobile web design by Frey Design Group"
                             className="mobile-img"
                             fetchPriority="high"
                         />
                         <img
-                            ref={mobileMenuImg}
-                            src={brand[i].mobileMenuImg}
+                            ref={setRef('mobileMenuImg')}
+                            src={brand[slide].mobileMenuImg}
                             alt="Mobile menu web design by Frey Design Group"
                             className="mobile-menu-img"
                             fetchPriority="high"
                         />
                         <img
-                            ref={shopModuleImg}
-                            src={brand[i].shopModuleImg}
+                            ref={setRef('shopModuleImg')}
+                            src={brand[slide].shopModuleImg}
                             alt="Shop module web design by Frey Design Group"
                             className="shop-module-img"
                             fetchPriority="high"
