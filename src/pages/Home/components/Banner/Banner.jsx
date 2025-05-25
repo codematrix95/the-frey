@@ -1,22 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 
-import spearFish from './js/variables/spearFish';
-import janus from './js/variables/janus';
-import cantigny from './js/variables/cantigny';
+import spearFish from './js/brands/spearFish.js';
+import janus from './js/brands/janus.js';
+import cantigny from './js/brands/cantigny.js';
 
 import slideAnimation from './js/helpers/slideAnimation.js';
 
 import './Banner.scss';
 
 const Banner = () => {
-    const brand = useRef(null);
+    const name = useRef(null);
     const desktopImg = useRef(null);
     const mobileImg = useRef(null);
     const mobileMenuImg = useRef(null);
     const shopModuleImg = useRef(null);
 
     const animateRef = [
-        brand,
+        name,
         desktopImg,
         mobileImg,
         mobileMenuImg,
@@ -24,10 +24,10 @@ const Banner = () => {
     ];
 
     const [i, setSlide] = useState(0);
-    const brands = [spearFish, janus, cantigny];
+    const brand = [spearFish, janus, cantigny];
 
     useEffect(() => {
-        slideAnimation(i, animateRef, setSlide, brands);
+        slideAnimation(i, animateRef, setSlide, brand);
     }, [i]);
 
     return (
@@ -39,8 +39,8 @@ const Banner = () => {
                         Healthcare, CRE, and Nonprofit
                     </span>{' '}
                     <span
-                        ref={brand}
-                        data-text={brands[i][0]}
+                        ref={name}
+                        data-text={brand[i].name}
                         aria-hidden="true"
                         className="rotating-text"
                     ></span>
@@ -53,28 +53,28 @@ const Banner = () => {
                     <div className="rotating-imgs-grid">
                         <img
                             ref={desktopImg}
-                            src={brands[i][1]}
+                            src={brand[i].desktopImg}
                             alt="Desktop web design by Frey Design Group"
                             className="desktop-img"
                             fetchPriority="high"
                         />
                         <img
                             ref={mobileImg}
-                            src={brands[i][2]}
+                            src={brand[i].mobileImg}
                             alt="Mobile web design by Frey Design Group"
                             className="mobile-img"
                             fetchPriority="high"
                         />
                         <img
                             ref={mobileMenuImg}
-                            src={brands[i][3]}
+                            src={brand[i].mobileMenuImg}
                             alt="Mobile menu web design by Frey Design Group"
                             className="mobile-menu-img"
                             fetchPriority="high"
                         />
                         <img
                             ref={shopModuleImg}
-                            src={brands[i][4]}
+                            src={brand[i].shopModuleImg}
                             alt="Shop module web design by Frey Design Group"
                             className="shop-module-img"
                             fetchPriority="high"

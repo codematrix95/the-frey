@@ -1,4 +1,4 @@
-const animationStart = async (ref) => {
+const animationEnd = async (ref) => {
     return new Promise((resolve) =>
         ref.current.addEventListener('animationend', resolve, {
             once: true,
@@ -6,34 +6,34 @@ const animationStart = async (ref) => {
     );
 };
 
-const slideFadeIn = async (animFunc, animateRef) => {
+const slideFadeIn = async (eventListener, animateRef) => {
     for (const [i, ref] of animateRef.entries()) {
         ref.current.classList.add('slide-fade-in');
-        if(i > 0) await animFunc(ref)
+        if(i > 0) await eventListener(ref)
     }
 };
 
-const slideFadeOut = async (animFunc, animateRef) => {
+const slideFadeOut = async (eventListener, animateRef) => {
     for (const [i, ref] of animateRef.entries()) {
         ref.current.classList.add('slide-fade-out');
-        if (i === 4) await animFunc(ref);
+        if (i === 4) await eventListener(ref);
     }
 };
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const nextSlide = async (i, animateRef, setSlide, brands) => {
-    setSlide((i + 1) % brands.length);
+const nextSlide = async (i, animateRef, setSlide, brand) => {
+    setSlide((i + 1) % brand.length);
     animateRef.forEach((ref) => {
         ref.current.classList.remove('slide-fade-in', 'slide-fade-out');
     });
 };
 
-const slideAnimation = async (i, animateRef, setSlide, brands) => {
-    await slideFadeIn(animationStart, animateRef);
+const slideAnimation = async (i, animateRef, setSlide, brand) => {
+    await slideFadeIn(animationEnd, animateRef);
     await delay(2000);
-    await slideFadeOut(animationStart, animateRef);
-    await nextSlide(i, animateRef, setSlide, brands);
+    await slideFadeOut(animationEnd, animateRef);
+    await nextSlide(i, animateRef, setSlide, brand);
 };
 
 export default slideAnimation;
