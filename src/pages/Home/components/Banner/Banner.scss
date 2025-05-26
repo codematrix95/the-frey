@@ -1,6 +1,7 @@
 .sr-only {
     position: absolute;
-    size: 0px;
+    height: 0px;
+    width: 0px;
     clip-path: inset(50%);
 }
 
@@ -17,7 +18,7 @@
     position: relative;
     width: max-content;
     align-items: end;
-    margin: 15px 10px 60px 30px;
+    margin: 15px 10px 15px 60px;
     .desktop-img {
         grid-area: 1 / 1;
         width: 600px;
@@ -70,10 +71,6 @@
     }
 
     @media (max-width: 776px) {
-        .rotating-imgs-grid {
-            margin: 15px 10px 60px 30px;
-        }
-
         .desktop-img {
             width: 350px;
         }
@@ -98,14 +95,30 @@
     }
 
     @media (max-width: 350px) {
+        .rotating-imgs-grid {
+            margin: 20px;
+        }
+
         .desktop-img {
-            width: 200px;
+            width: 225px;
         }
 
         .mobile-img,
         .mobile-menu-img,
         .shop-module-img {
-            width: 50px;
+            width: 56.25px;
+        }
+
+        .mobile-img {
+            right: 15px;
+        }
+
+        .mobile-menu-img {
+            right: 30px;
+        }
+
+        .shop-module-img {
+            right: 5px;
         }
     }
 }
