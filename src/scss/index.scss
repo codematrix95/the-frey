@@ -1,4 +1,6 @@
 @use './fonts';
-h1 {
-    background-color: pink;
+@use './colors';
+
+.red {
+    background-color: red;
 }

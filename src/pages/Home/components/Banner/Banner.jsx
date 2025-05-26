@@ -46,7 +46,7 @@ const Banner = () => {
                         Exceptional <span className="pe-4">Design</span>
                     </h2>
                 </div>
-                <div className="d-flex justify-content-center mb-2 me-md-auto">
+                <div className="d-flex justify-content-center mb-4 me-md-auto">
                     <div className="rotating-imgs-grid">
                         <img
                             ref={setRef('desktopImg')}
