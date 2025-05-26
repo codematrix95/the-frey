@@ -28,8 +28,8 @@ const Banner = () => {
     return (
         <>
             <div className="d-flex flex-column flex-md-row justify-content-around">
-                <div className="d-flex mx-2">
-                    <h2 className='fs-3 fs-sm-1 text-nowrap'>
+                <div className="d-flex ms-md-auto">
+                    <h2 className='fs-3 fs-sm-1 text-nowrap maitree-regular'>
                         Growing{' '}
                         <span className="sr-only text-wrap">
                             Healthcare, CRE, and Nonprofit
@@ -46,7 +46,7 @@ const Banner = () => {
                         Exceptional <span className="pe-4">Design</span>
                     </h2>
                 </div>
-                <div className="d-flex justify-content-center mb-2">
+                <div className="d-flex justify-content-center mb-2 me-md-auto">
                     <div className="rotating-imgs-grid">
                         <img
                             ref={setRef('desktopImg')}
