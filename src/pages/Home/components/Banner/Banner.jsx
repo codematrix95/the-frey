@@ -27,23 +27,25 @@ const Banner = () => {
 
     return (
         <>
-            <div className="row mx-2">
-                <h2>
-                    Growing{' '}
-                    <span className="sr-only">
-                        Healthcare, CRE, and Nonprofit
-                    </span>{' '}
-                    <span
-                        ref={setRef('name')}
-                        data-text={brand[slide].name}
-                        aria-hidden="true"
-                        className="rotating-text"
-                    ></span>
-                    <br />
-                    Brands Through
-                    <br />
-                    Exceptional <span className="pe-4">Design</span>
-                </h2>
+            <div className="d-flex flex-column flex-md-row justify-content-around">
+                <div className="d-flex mx-2">
+                    <h2 className='fs-1 text-nowrap'>
+                        Growing{' '}
+                        <span className="sr-only">
+                            Healthcare, CRE, and Nonprofit
+                        </span>{' '}
+                        <span
+                            ref={setRef('name')}
+                            data-text={brand[slide].name}
+                            aria-hidden="true"
+                            className="rotating-text"
+                        ></span>
+                        <br />
+                        Brands Through
+                        <br />
+                        Exceptional <span className="pe-4">Design</span>
+                    </h2>
+                </div>
                 <div className="d-flex justify-content-center">
                     <div className="rotating-imgs-grid">
                         <img
