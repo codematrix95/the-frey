@@ -10,7 +10,7 @@ const Header = () => {
             >
                 Skip to main content
             </a>
-            <header>
+            <header className='roboto-regular'>
                 <h1>
                     <Link
                         to="/"
