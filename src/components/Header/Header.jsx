@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import './header.scss';
 
+import Logo from './components/Logo';
+
 const Header = () => {
     return (
         <>
@@ -10,16 +12,16 @@ const Header = () => {
             >
                 Skip to main content
             </a>
-            <header className='roboto-regular'>
+            <header className="roboto-regular">
                 <h1>
                     <Link
                         to="/"
                         aria-label="Go to Frey Design Group homepage"
                     >
-                        Frey Design Group
+                        <Logo />
                     </Link>
                 </h1>
-                <nav>
+                <nav aria-label="Page">
                     <ul>
                         <li>
                             <Link to="/clients">Clients</Link>
