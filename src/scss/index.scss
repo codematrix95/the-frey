@@ -1,2 +1,9 @@
 @use './fonts';
 @use './colors';
+
+.sr-only {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    clip-path: inset(50%);
+}
