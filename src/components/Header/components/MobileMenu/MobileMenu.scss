@@ -1,7 +1,9 @@
+@use '../../../../scss/colors/' as *;
+
 .mobile-menu {
     width: 40px;
     height: 40px;
-    border: 2px solid red;
+    border: 1.5px solid $icon-blue;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -12,62 +14,62 @@
     &::after {
         content: '';
         display: block;
-        width: 24px;
-        height: 2px;
+        width: 20px;
+        height: 1.5px;
         transform: rotate(0deg);
-        background-color: white;
+        background-color: $icon-blue;
     }
 
     &::before {
-        box-shadow: 0 -8px white;
+        box-shadow: 0 -8px $icon-blue;
     }
 
     &::after {
-        box-shadow: 0 8px white;
+        box-shadow: 0 8px $icon-blue;
         position: absolute;
     }
 }
 
-.menuOpen {
+.mobile-menu-open {
     &::before {
-        animation: menuOpenBefore 1s linear 0s 1 normal forwards;
+        animation: mobileMenuBefore 1s linear 0s 1 normal forwards;
     }
 
     &::after {
-        animation: menuOpenAfter 1s linear 0s 1 normal forwards;
+        animation: mobileMenuAfter 1s linear 0s 1 normal forwards;
     }
 }
 
-@keyframes menuOpenBefore {
+@keyframes mobileMenuBefore {
     0% {
-        box-shadow: 0 -8px white;
+        box-shadow: 0 -8px $icon-blue;
     }
     25% {
-        box-shadow: 0 0px white;
+        box-shadow: 0 0px $icon-blue;
     }
     75% {
-        box-shadow: 0 0px white;
+        box-shadow: 0 0px $icon-blue;
         transform: rotate(0deg);
     }
     100% {
-        box-shadow: 0 0px white;
+        box-shadow: 0 0px $icon-blue;
         transform: rotate(45deg);
     }
 }
 
-@keyframes menuOpenAfter {
+@keyframes mobileMenuAfter {
     0% {
-        box-shadow: 0 8px white;
+        box-shadow: 0 8px $icon-blue;
     }
     25% {
-        box-shadow: 0 0px white;
+        box-shadow: 0 0px $icon-blue;
     }
     75% {
-        box-shadow: 0 0px white;
+        box-shadow: 0 0px $icon-blue;
         transform: rotate(0deg);
     }
     100% {
-        box-shadow: 0 0px white;
+        box-shadow: 0 0px $icon-blue;
         transform: rotate(-45deg);
     }
 }
