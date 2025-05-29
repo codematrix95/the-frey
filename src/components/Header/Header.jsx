@@ -19,6 +19,7 @@ const Header = () => {
                         aria-label="Go to Frey Design Group homepage"
                         className="home-link"
                     >
+                        <span className="sr-only">Frey Design Group</span>
                         <Logo />
                     </Link>
                 </h1>
