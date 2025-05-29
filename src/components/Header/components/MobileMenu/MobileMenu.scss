@@ -30,13 +30,23 @@
     }
 }
 
-.mobile-menu-open {
+.mobile-menu-open-anim {
     &::before {
         animation: mobileMenuBefore 1s linear 0s 1 normal forwards;
     }
 
     &::after {
         animation: mobileMenuAfter 1s linear 0s 1 normal forwards;
+    }
+}
+
+.mobile-menu-close-anim {
+    &::before {
+        animation: mobileMenuBefore 1s linear 0s 1 reverse forwards;
+    }
+
+    &::after {
+        animation: mobileMenuAfter 1s linear 0s 1 reverse forwards;
     }
 }
 
