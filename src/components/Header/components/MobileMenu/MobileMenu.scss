@@ -1,0 +1,73 @@
+.mobile-menu {
+    width: 40px;
+    height: 40px;
+    border: 2px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 2px;
+        transform: rotate(0deg);
+        background-color: white;
+    }
+
+    &::before {
+        box-shadow: 0 -8px white;
+    }
+
+    &::after {
+        box-shadow: 0 8px white;
+        position: absolute;
+    }
+}
+
+.menuOpen {
+    &::before {
+        animation: menuOpenBefore 1s linear 0s 1 normal forwards;
+    }
+
+    &::after {
+        animation: menuOpenAfter 1s linear 0s 1 normal forwards;
+    }
+}
+
+@keyframes menuOpenBefore {
+    0% {
+        box-shadow: 0 -8px white;
+    }
+    25% {
+        box-shadow: 0 0px white;
+    }
+    75% {
+        box-shadow: 0 0px white;
+        transform: rotate(0deg);
+    }
+    100% {
+        box-shadow: 0 0px white;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes menuOpenAfter {
+    0% {
+        box-shadow: 0 8px white;
+    }
+    25% {
+        box-shadow: 0 0px white;
+    }
+    75% {
+        box-shadow: 0 0px white;
+        transform: rotate(0deg);
+    }
+    100% {
+        box-shadow: 0 0px white;
+        transform: rotate(-45deg);
+    }
+}

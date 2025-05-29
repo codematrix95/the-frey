@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './header.scss';
 
 import Logo from './components/Logo';
+import MobileMenu from './components/MobileMenu/MobileMenu';
 
 const Header = () => {
     return (
@@ -42,6 +43,7 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
+                <MobileMenu />
             </header>
         </>
     );
