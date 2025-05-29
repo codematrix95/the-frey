@@ -12,17 +12,18 @@ const Header = () => {
             >
                 Skip to main content
             </a>
-            <header className="roboto-regular">
-                <h1>
+            <header className="d-grid m-3 p-4 gap-0 align-items-center roboto-regular">
+                <h1 className="d-flex m-0">
                     <Link
                         to="/"
                         aria-label="Go to Frey Design Group homepage"
+                        className="home-link"
                     >
                         <Logo />
                     </Link>
                 </h1>
                 <nav aria-label="Page">
-                    <ul>
+                    <ul className="d-flex justify-content-between align-items-end p-0 m-0 fs-6">
                         <li>
                             <Link to="/clients">Clients</Link>
                         </li>
