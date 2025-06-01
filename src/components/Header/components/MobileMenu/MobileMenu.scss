@@ -19,6 +19,7 @@
         height: 1.5px;
         transform: rotate(0deg);
         background-color: $icon-blue;
+        position: absolute;
     }
 
     &::before {
@@ -27,31 +28,20 @@
 
     &::after {
         box-shadow: 0 8px $icon-blue;
-        position: absolute;
     }
 }
 
 .mobile-menu-open {
     &::before {
-        animation: mobileMenuBefore 1s linear 0s 1 normal forwards;
+        animation: beforeStart 500ms linear 0s normal forwards;
     }
 
     &::after {
-        animation: mobileMenuAfter 1s linear 0s 1 normal forwards;
+        animation: afterStart 500ms linear 0s normal forwards;
     }
 }
 
-.mobile-menu-close {
-    &::before {
-        animation: mobileMenuBefore 1s linear 0s 1 reverse forwards;
-    }
-
-    &::after {
-        animation: mobileMenuAfter 1s linear 0s 1 reverse forwards;
-    }
-}
-
-@keyframes mobileMenuBefore {
+@keyframes beforeStart {
     0% {
         box-shadow: 0 -8px $icon-blue;
     }
@@ -68,7 +58,51 @@
     }
 }
 
-@keyframes mobileMenuAfter {
+@keyframes afterStart {
+    0% {
+        box-shadow: 0 8px $icon-blue;
+    }
+    25% {
+        box-shadow: 0 0px $icon-blue;
+    }
+    75% {
+        box-shadow: 0 0px $icon-blue;
+        transform: rotate(0deg);
+    }
+    100% {
+        box-shadow: 0 0px $icon-blue;
+        transform: rotate(-45deg);
+    }
+}
+
+.mobile-menu-close {
+    &::before {
+        animation: beforeEnd 500ms linear 0s reverse forwards;
+    }
+
+    &::after {
+        animation: afterEnd 500ms linear 0s reverse forwards;
+    }
+}
+
+@keyframes beforeEnd {
+    0% {
+        box-shadow: 0 -8px $icon-blue;
+    }
+    25% {
+        box-shadow: 0 0px $icon-blue;
+    }
+    75% {
+        box-shadow: 0 0px $icon-blue;
+        transform: rotate(0deg);
+    }
+    100% {
+        box-shadow: 0 0px $icon-blue;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes afterEnd {
     0% {
         box-shadow: 0 8px $icon-blue;
     }

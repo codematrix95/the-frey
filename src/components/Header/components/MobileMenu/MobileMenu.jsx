@@ -2,72 +2,38 @@ import { useState, useRef, useEffect } from 'react';
 import './MobileMenu.scss';
 
 const MobileMenu = () => {
-    const refs = useRef({
-        mobileMenu: null,
-        anim: null,
-        finish: null,
-    });
+    const [state, setState] = useState(0);
+    const [anim, setAnim] = useState(0);
+    const [canClick, setCanClick] = useState(true);
 
-    const ref = refs.current;
+    const classMap = [
+        ['mobile-menu'],
+        [
+            'mobile-menu mobile-menu-open',
+            'mobile-menu mobile-menu-open mobile-menu-close',
+        ],
+    ];
 
-    const [isToggled, setIsToggled] = useState('normal');
+    const click = () => {
+        if (!canClick) return;
+        if (!anim) setAnim(1);
+        setState((prev) => (prev + 1) % classMap[anim].length); // cycles 0 → 1 → 2 → 0 ...
+    };
 
-    useEffect(() => {
-        const mobileMenuAnim = (isToggled) => {
-            const iconBlue = '#00aeef';
-            const transform = 'rotate(0deg)';
-            const boxShadow = `0 0px ${iconBlue}`;
+    const animStart = () => {
+        setCanClick(false);
+    };
 
-            const options = {
-                duration: 500,
-                fill: 'forwards',
-                direction: isToggled,
-            };
-
-            const frames = [
-                { transform: `${transform}`, boxShadow: `${boxShadow}` },
-                { transform: `${transform}`, boxShadow: `${boxShadow}` },
-            ];
-
-            const before = [
-                { transform: `${transform}`, boxShadow: `0 -8px ${iconBlue}` },
-                ...frames,
-                { transform: 'rotate(45deg)', boxShadow: `${boxShadow}` },
-            ];
-
-            const after = [
-                { transform: `${transform}`, boxShadow: `0 8px ${iconBlue}` },
-                ...frames,
-                { transform: 'rotate(-45deg)', boxShadow: `${boxShadow}` },
-            ];
-
-            ref.finish = ref.mobileMenu.animate(before, {
-                ...options,
-                pseudoElement: '::before',
-            });
-
-            ref.mobileMenu.animate(after, {
-                ...options,
-                pseudoElement: '::after',
-            });
-        };
-
-        ref.anim = mobileMenuAnim;
-    });
-
-    const handleClick = () => {
-        ref.anim(isToggled);
-
-        ref.finish.onfinish = () => {
-            setIsToggled((prev) => (prev === 'normal' ? 'reverse' : 'normal'));
-        };
+    const animEnd = () => {
+        setCanClick(true);
     };
 
     return (
         <div
-            ref={(e) => (ref.mobileMenu = e)}
-            className="mobile-menu"
-            onClick={handleClick}
+            className={classMap[anim][state]}
+            onClick={click}
+            onAnimationStart={animStart}
+            onAnimationEnd={animEnd}
         ></div>
     );
 };

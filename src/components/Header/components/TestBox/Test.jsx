@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import './Test.scss';
 
 const Test = () => {
@@ -7,10 +7,6 @@ const Test = () => {
     const [canClick, setCanClick] = useState(true);
 
     const classMap = [['box'], ['box anim-start', 'box anim-start anim-end']];
-
-    useEffect(() => {
-        console.log("use effect ran")
-    })
 
     const click = () => {
         if (!canClick) return;
