@@ -1,0 +1,32 @@
+.box {
+    padding: 1rem;
+    background: red;
+    color: white;
+    cursor: pointer;
+}
+
+.anim-start {
+    animation: animStart 5s ease-in-out 1 forwards normal;
+}
+
+.anim-end {
+    animation: animReverse 5s ease-in-out 1 forwards reverse;
+}
+
+@keyframes animStart {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: green;
+    }
+}
+
+@keyframes animReverse {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: green;
+    }
+}

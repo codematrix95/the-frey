@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     transition: transform 1s ease;
+    background-color: none;
 
     &::before,
     &::after {
@@ -30,7 +31,7 @@
     }
 }
 
-.mobile-menu-open-anim {
+.mobile-menu-open {
     &::before {
         animation: mobileMenuBefore 1s linear 0s 1 normal forwards;
     }
@@ -40,7 +41,7 @@
     }
 }
 
-.mobile-menu-close-anim {
+.mobile-menu-close {
     &::before {
         animation: mobileMenuBefore 1s linear 0s 1 reverse forwards;
     }

@@ -3,6 +3,7 @@ import './header.scss';
 
 import Logo from './components/Logo';
 import MobileMenu from './components/MobileMenu/MobileMenu';
+import Test from './components/TestBox/Test';
 
 const Header = () => {
     return (
@@ -44,6 +45,7 @@ const Header = () => {
                     </ul>
                 </nav>
                 <MobileMenu />
+                <Test />
             </header>
         </>
     );
