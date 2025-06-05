@@ -6,7 +6,7 @@ import cantigny from './js/brands/cantigny.js';
 
 import slideAnimation from './js/helpers/slideAnimation/slideAnimation.js';
 
-import './Banner.scss';
+import './scss/index.scss'
 
 const Banner = () => {
     const ref = useRef({
