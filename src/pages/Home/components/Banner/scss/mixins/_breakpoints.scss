@@ -1,0 +1,65 @@
+@mixin breakpoints {
+    @media (max-width: 1100px) {
+        .desktop-img {
+            width: 400px;
+        }
+
+        .mobile-img,
+        .mobile-menu-img,
+        .shop-module-img {
+            width: 100px;
+        }
+    }
+
+    @media (max-width: 776px) {
+        .desktop-img {
+            width: 350px;
+        }
+
+        .mobile-img,
+        .mobile-menu-img,
+        .shop-module-img {
+            width: 93.75px;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .desktop-img {
+            width: 250px;
+        }
+
+        .mobile-img,
+        .mobile-menu-img,
+        .shop-module-img {
+            width: 65.2px;
+        }
+    }
+
+    @media (max-width: 350px) {
+        .rotating-imgs-grid {
+            margin: 20px;
+        }
+
+        .desktop-img {
+            width: 225px;
+        }
+
+        .mobile-img,
+        .mobile-menu-img,
+        .shop-module-img {
+            width: 56.25px;
+        }
+
+        .mobile-img {
+            right: 15px;
+        }
+
+        .mobile-menu-img {
+            right: 30px;
+        }
+
+        .shop-module-img {
+            right: 5px;
+        }
+    }
+}
