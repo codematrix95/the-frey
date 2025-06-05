@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import './MobileMenu.scss';
+import { useState } from 'react';
+import './scss/index.scss'
 
 const MobileMenu = () => {
     const [state, setState] = useState(0);

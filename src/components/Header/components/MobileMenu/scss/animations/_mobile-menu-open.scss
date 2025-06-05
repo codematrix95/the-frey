@@ -1,0 +1,46 @@
+@use '../../../../../../scss/colors' as *;
+
+.mobile-menu-open {
+    &::before {
+        animation: beforeStart 500ms linear 0s normal forwards;
+    }
+
+    &::after {
+        animation: afterStart 500ms linear 0s normal forwards;
+    }
+}
+
+@keyframes beforeStart {
+    0% {
+        box-shadow: 0 -8px $icon-blue;
+    }
+    25% {
+        box-shadow: 0 0px $icon-blue;
+    }
+    75% {
+        box-shadow: 0 0px $icon-blue;
+        transform: rotate(0deg);
+    }
+    100% {
+        box-shadow: 0 0px $icon-blue;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes afterStart {
+    0% {
+        box-shadow: 0 8px $icon-blue;
+    }
+    25% {
+        box-shadow: 0 0px $icon-blue;
+    }
+    75% {
+        box-shadow: 0 0px $icon-blue;
+        transform: rotate(0deg);
+    }
+    100% {
+        box-shadow: 0 0px $icon-blue;
+        transform: rotate(-45deg);
+    }
+}
+
