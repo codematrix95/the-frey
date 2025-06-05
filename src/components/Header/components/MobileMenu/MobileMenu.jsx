@@ -17,7 +17,7 @@ const MobileMenu = () => {
     const click = () => {
         if (!canClick) return;
         if (!anim) setAnim(1);
-        setState((prev) => (prev + 1) % classMap[anim].length); // cycles 0 → 1 → 2 → 0 ...
+        setState((prev) => (prev + 1) % classMap[anim].length); 
     };
 
     const animStart = () => {
