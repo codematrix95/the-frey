@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './header.scss';
+import './index.scss';
 
 import Logo from './components/Logo';
 import MobileMenu from './components/MobileMenu/MobileMenu';
@@ -18,7 +18,6 @@ const Header = () => {
                     <Link
                         to="/"
                         aria-label="Go to Frey Design Group homepage"
-                        className="home-link"
                     >
                         <span className="sr-only">Frey Design Group</span>
                         <Logo />
