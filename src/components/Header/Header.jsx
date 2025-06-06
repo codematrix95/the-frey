@@ -16,7 +16,7 @@ const Header = () => {
             <header className="d-grid m-3 p-4 gap-0 align-items-center roboto-regular">
                 <h1 className="d-flex m-0">
                     <Link
-                        to="/"
+                        to="/the-frey-build"
                         aria-label="Go to Frey Design Group homepage"
                     >
                         <span className="sr-only">Frey Design Group</span>
