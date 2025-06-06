@@ -7,7 +7,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/the-frey-build" element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </>
   )
