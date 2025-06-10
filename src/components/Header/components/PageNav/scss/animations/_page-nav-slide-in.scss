@@ -1,0 +1,12 @@
+.page-nav-slide-in {
+    animation: pageNavSlideIn 500ms ease-in-out 0s normal forwards;
+}
+
+@keyframes pageNavSlideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
