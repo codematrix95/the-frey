@@ -1,0 +1,12 @@
+.page-nav-slide-out {
+    animation: pageNavSlideOut 500ms ease-in-out 0s reverse forwards;
+}
+
+@keyframes pageNavSlideOut {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

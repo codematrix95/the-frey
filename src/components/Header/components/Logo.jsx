@@ -8,13 +8,13 @@ const Logo = () => {
         >
             <g
                 stroke="none"
-                stroke-width="1"
+                strokeWidth="1"
                 fill="none"
-                fill-rule="evenodd"
+                fillRule="evenodd"
             >
                 <g
                     id="frey-logo"
-                    fill-rule="nonzero"
+                    fillRule="nonzero"
                 >
                     <path
                         d="M89.48 19.581l4.714-4.72a.69.69 0 01.475-.201h8.818a.683.683 0 00.683-.683V.69a.69.69 0 00-.683-.69H90.2a.69.69 0 00-.69.69l-.03 18.891z"

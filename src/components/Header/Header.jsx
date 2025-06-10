@@ -1,21 +1,14 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
 
 import Logo from './components/Logo';
+import PageNav from './components/PageNav/PageNav';
 import MobileMenu from './components/MobileMenu/MobileMenu';
 
 const Header = () => {
     const [state, setState] = useState(0);
     const [anim, setAnim] = useState(0);
-
-    const classMap = [
-        [''],
-        [
-            'mobile-menu-slide-in',
-            'mobile-menu-slide-in mobile-menu-slide-out',
-        ],
-    ];
 
     return (
         <>
@@ -35,29 +28,16 @@ const Header = () => {
                         <Logo />
                     </Link>
                 </h1>
-                <nav
-                    aria-label="Page"
-                    className={classMap[anim][state]}
-                >
-                    <ul className="d-flex justify-content-between align-items-end px-4 m-0 fs-4 fs-sm-6">
-                        <li>
-                            <Link to="/clients">Clients</Link>
-                        </li>
-                        <li>
-                            <Link to="/expertise">Expertise</Link>
-                        </li>
-                        <li>
-                            <Link to="/about">About</Link>
-                        </li>
-                        <li>
-                            <Link to="/blog">Blog</Link>
-                        </li>
-                        <li>
-                            <Link to="/careers">Careers</Link>
-                        </li>
-                    </ul>
-                </nav>
-                <MobileMenu state={state} setState={setState} anim={anim} setAnim={setAnim} />
+                <PageNav
+                    state={state}
+                    anim={anim}
+                />
+                <MobileMenu
+                    state={state}
+                    setState={setState}
+                    anim={anim}
+                    setAnim={setAnim}
+                />
             </header>
         </>
     );

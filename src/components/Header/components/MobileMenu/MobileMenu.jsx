@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './scss/index.scss'
 
 const MobileMenu = ({state, setState, anim, setAnim}) => {
-    // const [anim, setAnim] = useState(0);
     const [canClick, setCanClick] = useState(true);
 
     const classMap = [
