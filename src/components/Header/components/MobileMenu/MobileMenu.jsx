@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import './scss/index.scss'
 
-const MobileMenu = () => {
-    const [state, setState] = useState(0);
-    const [anim, setAnim] = useState(0);
+const MobileMenu = ({state, setState, anim, setAnim}) => {
+    // const [anim, setAnim] = useState(0);
     const [canClick, setCanClick] = useState(true);
 
     const classMap = [
@@ -17,7 +16,7 @@ const MobileMenu = () => {
     const click = () => {
         if (!canClick) return;
         if (!anim) setAnim(1);
-        setState((prev) => (prev + 1) % classMap[anim].length); 
+        setState((prev) => (prev + 1) % classMap[anim].length);
     };
 
     const animStart = () => {
