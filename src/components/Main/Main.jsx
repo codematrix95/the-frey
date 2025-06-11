@@ -1,4 +1,4 @@
 const Main = ({ children }) => {
-    return <main id="main-content" className="mx-2">{children}</main>;
+    return <main id="main-content">{children}</main>;
 };
 export default Main;
