@@ -1,0 +1,29 @@
+@use '@scss/colors' as *;
+
+.meet-frey {
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        color: $light-grey;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 1.5px solid $icon-blue;
+        background-color: transparent;
+        border-radius: 50%;
+        svg {
+            width: 32px;
+            color: $icon-blue;
+        }
+    }
+}
