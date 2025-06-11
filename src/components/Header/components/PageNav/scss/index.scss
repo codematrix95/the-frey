@@ -2,16 +2,16 @@
 @use './animations/' as *;
 
 nav {
-    min-width: 325px;
-
+    min-width: 400px;
     @media (max-width: 535px) {
+        min-width: 320px;
         position: absolute;
         background-color: $midnight-blue;
-        inset: 60px 0px 0px 0px;
+        inset: 80px 0 0 0;
         z-index: 2;
         transform: translateX(-100%);
     }
-    
+
     ul {
         @media (max-width: 535px) {
             flex-direction: column;

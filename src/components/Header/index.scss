@@ -1,7 +1,7 @@
 @use '@scss/colors' as *;
 
 header {
-    height: 60px;
+    height: 80px;
     grid-template-columns: 4fr 1fr;
     h1 > a {
         line-height: 24px;

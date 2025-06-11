@@ -1,6 +1,13 @@
 @use './mixins/' as *;
 @use './animations/' as *;
 
+h2 {
+    font-size: 2rem;
+    @media (max-width: 535px) {
+        font-size: 1.5rem;
+    }
+}
+
 .rotating-text {
     display: inline-block;
     opacity: 0;
@@ -15,6 +22,11 @@
     width: max-content;
     align-items: end;
     margin: 15px 10px 15px 60px;
+
+    @media (max-width: 535px) {
+        margin: 15px 10px 15px 30px;
+    }
+
     .desktop-img {
         grid-area: 1 / 1;
         width: 600px;

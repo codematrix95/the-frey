@@ -27,9 +27,9 @@ const Banner = () => {
 
     return (
         <>
-            <div className="d-flex flex-column flex-md-row justify-content-aroun my-2">
+            <div className="d-flex flex-column flex-md-row my-2">
                 <div className="d-flex ms-md-auto">
-                    <h2 className='fs-3 fs-sm-1 text-nowrap maitree-regular text-white lh-base'>
+                    <h2 className='text-nowrap maitree-regular text-white lh-base'>
                         Growing{' '}
                         <span className="sr-only text-wrap">
                             Healthcare, CRE, and Nonprofit
