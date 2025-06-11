@@ -11,9 +11,11 @@ nav {
         z-index: 2;
         transform: translateX(-100%);
     }
+    
     ul {
         @media (max-width: 535px) {
             flex-direction: column;
+            font-size: 1.5rem;
         }
         li {
             list-style-type: none;

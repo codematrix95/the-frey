@@ -2,7 +2,6 @@
 @use './animations/' as *;
 
 .mobile-menu {
-    // position: absolute;
     width: 40px;
     height: 40px;
     border: 1.5px solid $icon-blue;
@@ -30,5 +29,10 @@
 
     &::after {
         box-shadow: 0 8px $icon-blue;
+    }
+
+    @media (min-width: 535px) {
+        position: absolute;
+        left: -40px;
     }
 }
