@@ -30,7 +30,9 @@ const Header = () => {
                 </h1>
                 <PageNav
                     state={state}
+                    setState={setState}
                     anim={anim}
+                    setAnim={setAnim}
                 />
                 <MobileMenu
                     state={state}
