@@ -30,22 +30,25 @@ const MeetFrey = () => {
                     <span className="m-0 me-2 text-decoration-none">
                         Get to know us today!
                     </span>
-                    <Link to="/about">
-                        <button>
-                            <svg
-                                viewBox="0 0 40 40"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M24 26l5-6-5-6m4 6H11"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </button>
+                    <Link
+                        to="/about"
+                        aria-label="Go to about page"
+                    >
+                        <span className="sr-only">Go to about page</span>
+                        <svg
+                            aria-hidden="true"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M24 26l5-6-5-6m4 6H11"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
                     </Link>
                 </div>
 
