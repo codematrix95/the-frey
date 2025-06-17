@@ -1,5 +1,5 @@
 @use './fonts';
-@use './colors';
+@use './colors' as *;
 
 .sr-only {
     position: absolute;
@@ -7,3 +7,4 @@
     width: 0px;
     clip-path: inset(50%);
 }
+
