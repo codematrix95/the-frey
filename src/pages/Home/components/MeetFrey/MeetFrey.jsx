@@ -33,11 +33,38 @@ const MeetFrey = () => {
                 goals.
             </p>
 
-            <img
-                src="https://freywebpro.wpenginepowered.com/wp-content/uploads/2020/03/home-bg-expertise.jpg"
-                alt="CRE Web Samples"
-            />
-            <span>Check Out Our Corporate CRE Website Expertise</span>
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+                <img
+                    src="https://freywebpro.wpenginepowered.com/wp-content/uploads/2020/03/home-bg-expertise.jpg"
+                    alt="CRE Web Samples"
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+                <PageLink
+                    linkClass={'roboto-regular'}
+                    style={{
+                        position: 'absolute',
+                        left: 5,
+                        bottom: 0,
+                    }}
+                    desc={
+                        <>
+                            <span
+                                className="text-nowrap"
+                                style={{ marginTop: '-2px' }}
+                            >
+                                Explore Our Corporate
+                            </span>
+                            <span
+                                className="flex-wrap text-nowrap ps-1"
+                                style={{ marginTop: '-2px' }}
+                            >
+                                CRE Website Expertise
+                            </span>
+                        </>
+                    }
+                    srOnly={'go to CRE expertise page'}
+                />
+            </div>
         </section>
     );
 };

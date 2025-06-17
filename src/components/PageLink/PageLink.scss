@@ -1,5 +1,9 @@
 @use '@scss/colors' as *;
 
+@mixin top-line-and-arrow {
+
+}
+
 .PageLink {
     position: relative;
     color: $white;
