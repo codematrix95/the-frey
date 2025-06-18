@@ -13,9 +13,27 @@
         width: 100%;
     }
 
-    .h2-link {
-        @media (max-width: 400px) {
-            width: 106px;
+    .meet-frey {
+        .PageLink {
+            padding-top: 2px;
+        }
+    }
+
+    .explore-cre {
+        position: relative;
+        display: inline-block;
+        .PageLink {
+            position: absolute;
+            left: 2.5%;
+            bottom: 5%;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        svg {
+            margin-top: 2px;
         }
     }
 }
