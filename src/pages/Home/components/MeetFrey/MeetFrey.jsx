@@ -4,9 +4,10 @@ import './MeetFrey.scss';
 const MeetFrey = () => {
     return (
         <section class="MeetFrey text-white">
-            <h2 className="roboto-medium text-uppercase">
+            <h2 className="roboto-medium text-uppercase meet-frey">
                 <PageLink
-                    linkClass={'roboto-medium text-uppercase h2-link'}
+                    linkClass={'roboto-medium text-uppercase'}
+                    goTo={'/about'}
                     desc={
                         <>
                             <span className="text-nowrap">Meet Frey,</span>
@@ -33,31 +34,20 @@ const MeetFrey = () => {
                 goals.
             </p>
 
-            <div style={{ position: 'relative', display: 'inline-block' }}>
+            <div className="explore-cre">
                 <img
                     src="https://freywebpro.wpenginepowered.com/wp-content/uploads/2020/03/home-bg-expertise.jpg"
                     alt="CRE Web Samples"
-                    style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
                 <PageLink
                     linkClass={'roboto-regular'}
-                    style={{
-                        position: 'absolute',
-                        left: 5,
-                        bottom: 0,
-                    }}
+                    goTo={'/expertise'}
                     desc={
                         <>
-                            <span
-                                className="text-nowrap"
-                                style={{ marginTop: '-2px' }}
-                            >
+                            <span className="text-nowrap">
                                 Explore Our Corporate
                             </span>
-                            <span
-                                className="flex-wrap text-nowrap ps-1"
-                                style={{ marginTop: '-2px' }}
-                            >
+                            <span className="flex-wrap text-nowrap ps-1">
                                 CRE Website Expertise
                             </span>
                         </>
@@ -68,22 +58,5 @@ const MeetFrey = () => {
         </section>
     );
 };
-
-{
-    /* <svg
-        aria-hidden="true"
-        viewBox="0 0 40 40"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M24 26l5-6-5-6m4 6H11"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-        />
-    </svg> */
-}
 
 export default MeetFrey;

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './PageLink.scss';
 
-const PageLink = ({ linkClass, style, desc, srOnly }) => {
+const PageLink = ({ linkClass, goTo, desc, srOnly }) => {
     const arrowIcon = [
         `M1 10`,
         'l18 0',
@@ -13,10 +13,9 @@ const PageLink = ({ linkClass, style, desc, srOnly }) => {
 
     return (
         <Link
-            to="/about"
+            to={goTo}
             aria-label="Go to about page"
             className={`PageLink text-decoration-none ${linkClass}`}
-            style={style}
         >
             <div className="d-flex flex-wrap">
                 <svg
