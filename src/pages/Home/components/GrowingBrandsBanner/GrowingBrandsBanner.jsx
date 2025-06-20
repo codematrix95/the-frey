@@ -8,7 +8,7 @@ import slideAnimation from './js/helpers/slideAnimation/slideAnimation.js';
 
 import './scss/index.scss'
 
-const Banner = () => {
+const GrowingBrandsBanner = () => {
     const ref = useRef({
         name: null,
         desktopImg: null,
@@ -27,7 +27,7 @@ const Banner = () => {
 
     return (
         <>
-            <div className="d-flex flex-column flex-md-row my-2">
+            <div className="d-flex flex-column flex-md-row my-2 mx-2 px-3 mx-lg-3 px-lg-4">
                 <div className="d-flex ms-md-auto">
                     <h2 className='text-nowrap maitree-regular text-white lh-base'>
                         Growing{' '}
@@ -83,4 +83,4 @@ const Banner = () => {
     );
 };
 
-export default Banner;
+export default GrowingBrandsBanner;
