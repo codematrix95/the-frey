@@ -1,16 +1,16 @@
 @use '@scss/colors' as *;
 
-.mobile-menu-close {
+.open {
     &::before {
-        animation: beforeEnd 500ms linear 0s reverse forwards;
+        animation: beforeStart 500ms linear 0s normal forwards;
     }
 
     &::after {
-        animation: afterEnd 500ms linear 0s reverse forwards;
+        animation: afterStart 500ms linear 0s normal forwards;
     }
 }
 
-@keyframes beforeEnd {
+@keyframes beforeStart {
     0% {
         box-shadow: 0 -8px $icon-blue;
     }
@@ -27,7 +27,7 @@
     }
 }
 
-@keyframes afterEnd {
+@keyframes afterStart {
     0% {
         box-shadow: 0 8px $icon-blue;
     }
@@ -43,3 +43,4 @@
         transform: rotate(-45deg);
     }
 }
+

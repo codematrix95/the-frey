@@ -1,7 +1,7 @@
 @use '@scss/colors' as *;
 @use './animations/' as *;
 
-nav {
+.nav {
     min-width: 400px;
     @media (max-width: 535px) {
         min-width: 320px;

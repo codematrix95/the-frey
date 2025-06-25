@@ -1,10 +1,12 @@
 @use '@scss/colors' as *;
 
-header {
+.header {
     height: 80px;
     grid-template-columns: 4fr 1fr;
-    h1 > a {
-        line-height: 24px;
+    h1 {
+        a {
+            line-height: 24px;
+        }
     }
 }
 
@@ -21,8 +23,7 @@ header {
     z-index: 100;
     text-decoration: none;
     transition: top 0.2s ease;
-}
-
-.skip-link:focus {
-    top: 0;
+    &:focus {
+        top: 0;
+    }
 }

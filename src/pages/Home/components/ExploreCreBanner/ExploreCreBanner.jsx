@@ -1,18 +1,19 @@
 import PageLink from '../../../../components/PageLink/PageLink';
-import './ExploreCreBanner.scss';
-
+import styles from './ExploreCreBanner.module.scss';
+import clsx from 'clsx'
 
 const ExploreCreBanner = () => {
     return (
         <section>
             <PageLink
-                linkClass={'explore-cre-link roboto-medium text-uppercase '}
+                linkClass={clsx(styles.link, 'roboto-medium text-uppercase')}
                 goTo={'/expertise'}
                 img={
                     <>
                         <img
                             src="https://freywebpro.wpenginepowered.com/wp-content/uploads/2020/03/home-bg-expertise.jpg"
                             alt="CRE Web Samples"
+                            fetchPriority="high"
                         />
                     </>
                 }

@@ -1,10 +1,16 @@
 import PageLink from '../../../../components/PageLink/PageLink';
-import './MeetFrey.scss';
+import styles from './MeetFrey.module.scss';
+import clsx from 'clsx';
 
 const MeetFrey = () => {
     return (
-        <section className="MeetFrey text-white mx-2 px-3 mx-lg-3 px-lg-4">
-            <h2 className="meet-frey-link roboto-medium text-uppercase ">
+        <section
+            className={clsx(
+                styles.section,
+                'text-white mx-2 px-3 mx-lg-3 px-lg-4'
+            )}
+        >
+            <h2 className="roboto-medium text-uppercase ">
                 <PageLink
                     linkClass={'roboto-medium text-uppercase'}
                     goTo={'/about'}
