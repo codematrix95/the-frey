@@ -1,6 +1,6 @@
 @use '@scss/colors' as *;
 
-.explore-cre-link {
+.link {
     position: relative;
     display: inline-block;
 
@@ -24,9 +24,10 @@
         height: auto;
         width: 100%;
     }
-    
+
     svg {
         margin-top: 2px;
     }
 }
+
 

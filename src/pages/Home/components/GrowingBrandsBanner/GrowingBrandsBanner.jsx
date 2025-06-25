@@ -6,7 +6,7 @@ import cantigny from './js/brands/cantigny.js';
 
 import slideAnimation from './js/helpers/slideAnimation/slideAnimation.js';
 
-import './scss/index.scss'
+import './scss/index.scss';
 
 const GrowingBrandsBanner = () => {
     const ref = useRef({
@@ -28,24 +28,22 @@ const GrowingBrandsBanner = () => {
     return (
         <>
             <div className="d-flex flex-column flex-md-row my-2 mx-2 px-3 mx-lg-3 px-lg-4">
-                <div className="d-flex ms-md-auto">
-                    <h2 className='text-nowrap maitree-regular text-white lh-base'>
-                        Growing{' '}
-                        <span className="sr-only text-wrap">
-                            Healthcare, CRE, and Nonprofit
-                        </span>{' '}
-                        <span
-                            ref={setRef('name')}
-                            data-text={brand[slide].name}
-                            aria-hidden="true"
-                            className="rotating-text"
-                        ></span>
-                        <br />
-                        Brands Through
-                        <br />
-                        Exceptional <span className="pe-4">Design</span>
-                    </h2>
-                </div>
+                <h2 className="ms-md-auto text-nowrap maitree-regular text-white lh-base">
+                    Growing{' '}
+                    <span className="sr-only text-wrap">
+                        Healthcare, CRE, and Nonprofit
+                    </span>{' '}
+                    <span
+                        ref={setRef('name')}
+                        data-text={brand[slide].name}
+                        aria-hidden="true"
+                        className="rotating-text"
+                    ></span>
+                    <br />
+                    Brands Through
+                    <br />
+                    Exceptional <span className="pe-4">Design</span>
+                </h2>
                 <div className="d-flex justify-content-center mb-4 me-md-auto">
                     <div className="rotating-imgs-grid">
                         <img

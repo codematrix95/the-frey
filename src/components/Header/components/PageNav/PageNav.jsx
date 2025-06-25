@@ -1,13 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useRef, useEffect } from 'react';
-import './scss/index.scss';
+import styles from './scss/PageNav.module.scss';
+import { clsx } from 'clsx';
+
 
 const PageNav = ({ state, setState, anim, setAnim }) => {
     const ul = useRef(null);
 
     const classMap = [
         [''],
-        ['page-nav-slide-in', 'page-nav-slide-in page-nav-slide-out'],
+        [
+            styles.slideIn,
+            clsx(styles.slideIn, styles.slideOut),
+        ],
     ];
 
     useEffect(() => {
@@ -19,8 +24,8 @@ const PageNav = ({ state, setState, anim, setAnim }) => {
         const onFontSizeChange = new ResizeObserver(() => {
             const newFontSize = getComputedStyle(ref).fontSize;
             if (newFontSize !== prevFontSize) {
-                setAnim(0)
-                setState(0)
+                setAnim(0);
+                setState(0);
             }
         });
 
@@ -32,7 +37,7 @@ const PageNav = ({ state, setState, anim, setAnim }) => {
     return (
         <nav
             aria-label="Page"
-            className={classMap[anim][state]}
+            className={clsx(styles.nav, classMap[anim][state])}
         >
             <ul
                 ref={ul}

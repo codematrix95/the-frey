@@ -1,0 +1,15 @@
+@use '@scss/colors' as *;
+
+.section {
+    h2 {
+        font-size: 1rem;
+        display: inline-block;
+        a {
+            padding-top: 2px;
+        }
+    }
+
+    p {
+        color: $light-grey;
+    }
+}

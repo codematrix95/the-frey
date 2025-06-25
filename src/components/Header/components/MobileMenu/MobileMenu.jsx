@@ -1,15 +1,13 @@
 import { useState } from 'react';
-import './scss/index.scss'
+import styles from './scss/MobileMenu.module.scss';
+import clsx from 'clsx';
 
-const MobileMenu = ({state, setState, anim, setAnim}) => {
+const MobileMenu = ({ state, setState, anim, setAnim }) => {
     const [canClick, setCanClick] = useState(true);
 
     const classMap = [
-        ['mobile-menu'],
-        [
-            'mobile-menu mobile-menu-open',
-            'mobile-menu mobile-menu-open mobile-menu-close',
-        ],
+        [''],
+        [styles.open, clsx(styles.open, styles.closed)],
     ];
 
     const click = () => {
@@ -28,7 +26,7 @@ const MobileMenu = ({state, setState, anim, setAnim}) => {
 
     return (
         <div
-            className={classMap[anim][state]}
+            className={clsx(styles.button, classMap[anim][state])}
             onClick={click}
             onAnimationStart={animStart}
             onAnimationEnd={animEnd}

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './index.scss';
+import styles from './Header.module.scss';
 
 import Logo from './components/Logo';
 import PageNav from './components/PageNav/PageNav';
 import MobileMenu from './components/MobileMenu/MobileMenu';
+import clsx from 'clsx';
 
 const Header = () => {
     const [state, setState] = useState(0);
@@ -14,11 +15,11 @@ const Header = () => {
         <>
             <a
                 href="#main-content"
-                className="skip-link"
+                className={styles.skipLink}
             >
                 Skip to main content
             </a>
-            <header className="d-flex gap-0 justify-content-between align-items-center roboto-regular mx-2 px-3 mx-lg-3 px-lg-4">
+            <header className={clsx(styles.header, "d-flex gap-0 justify-content-between align-items-center roboto-regular mx-2 px-3 mx-lg-3 px-lg-4")}>
                 <h1 className="d-flex m-0">
                     <Link
                         to="/the-frey-build/"
