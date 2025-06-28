@@ -1,4 +1,4 @@
-import desktopImg from '../../imgs/spearFish/desktop.webp';
+import desktopImg from '../../imgs/spearFish/desktop.jpg';
 import mobileImg from '../../imgs/spearFish/mobile.jpg';
 import mobileMenuImg from '../../imgs/spearFish/shop-module.jpg';
 import shopModuleImg from '../../imgs/spearFish/social-media.jpg';

@@ -1,6 +1,7 @@
 import PageLink from '../../../../components/PageLink/PageLink';
 import styles from './ExploreCreBanner.module.scss';
-import clsx from 'clsx'
+import img from './explore-cre.jpg';
+import clsx from 'clsx';
 
 const ExploreCreBanner = () => {
     return (
@@ -11,9 +12,12 @@ const ExploreCreBanner = () => {
                 img={
                     <>
                         <img
-                            src="https://freywebpro.wpenginepowered.com/wp-content/uploads/2020/03/home-bg-expertise.jpg"
+                            src={img}
                             alt="CRE Web Samples"
-                            fetchPriority="high"
+                            width="1920"
+                            height="1038"
+                            loading='eager'
+                            fetchpriority='high'
                         />
                     </>
                 }
