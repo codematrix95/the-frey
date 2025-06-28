@@ -1,13 +1,14 @@
+import desktopImg from '../../imgs/catigny/desktop.jpg';
+import mobileImg from '../../imgs/catigny/mobile.jpg';
+import mobileMenuImg from '../../imgs/catigny/shop-module.jpg';
+import shopModuleImg from '../../imgs/catigny/social-media.jpg';
+
 const cantigny = {
     name: 'Nonprofit',
-    desktopImg:
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2019/12/Cantigny-Homepage-Design.jpg',
-    mobileImg:
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2019/12/Cantigny-CTA-Module-Section.jpg',
-    mobileMenuImg:
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2019/12/Cantigny-Social-Media-Widget.jpg',
-    shopModuleImg:
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2019/12/Cantigny-Shop-Module.jpg',
+    desktopImg,
+    mobileImg,
+    mobileMenuImg,
+    shopModuleImg,
 };
 
 export default cantigny;
