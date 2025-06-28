@@ -1,13 +1,14 @@
+import desktopImg from '../../imgs/spearFish/desktop.webp';
+import mobileImg from '../../imgs/spearFish/mobile.jpg';
+import mobileMenuImg from '../../imgs/spearFish/shop-module.jpg';
+import shopModuleImg from '../../imgs/spearFish/social-media.jpg';
+
 const spearFish = {
     name: 'CRE',
-    desktopImg:
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/01_Home.jpg',
-    mobileImg:
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/02_Home.jpg',
-    mobileMenuImg:
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/04-Home.jpg',
-    shopModuleImg:
-        'https://freywebpro.wpenginepowered.com/wp-content/uploads/2021/10/03-Home-1.jpg',
+    desktopImg,
+    mobileImg,
+    mobileMenuImg,
+    shopModuleImg,
 };
 
 export default spearFish;

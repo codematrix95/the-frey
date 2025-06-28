@@ -51,28 +51,32 @@ const GrowingBrandsBanner = () => {
                             src={brand[slide].desktopImg}
                             alt="Desktop web design by Frey Design Group"
                             className="desktop-img"
-                            fetchPriority="high"
+                            width="600"
+                            height="432"
                         />
                         <img
                             ref={setRef('mobileImg')}
                             src={brand[slide].mobileImg}
                             alt="Mobile web design by Frey Design Group"
                             className="mobile-img"
-                            fetchPriority="high"
+                            width="150"
+                            height="269"
                         />
                         <img
                             ref={setRef('mobileMenuImg')}
                             src={brand[slide].mobileMenuImg}
                             alt="Mobile menu web design by Frey Design Group"
                             className="mobile-menu-img"
-                            fetchPriority="high"
+                            width="150"
+                            height="120"
                         />
                         <img
                             ref={setRef('shopModuleImg')}
                             src={brand[slide].shopModuleImg}
                             alt="Shop module web design by Frey Design Group"
                             className="shop-module-img"
-                            fetchPriority="high"
+                            width="150"
+                            height="178"
                         />
                     </div>
                 </div>
