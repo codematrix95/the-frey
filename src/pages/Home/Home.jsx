@@ -9,7 +9,7 @@ const Home = () => {
         <Main>
             <GrowingBrandsBanner />
             <MeetFrey />
-            {/* <ExploreCreBanner /> */}
+            <ExploreCreBanner />
         </Main>
     );
 };
