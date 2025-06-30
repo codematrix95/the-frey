@@ -21,7 +21,9 @@ export default defineConfig({
         },
         preprocessorOptions: {
             scss: {
-                additionalData: '', // optional
+                silenceDeprecations: ['import', 'slash-div', 'global-builtin'],
+                quietDeps: true,
+                additionalData: '',
                 includePaths: [path.resolve(__dirname, 'src/scss')],
             },
         },
