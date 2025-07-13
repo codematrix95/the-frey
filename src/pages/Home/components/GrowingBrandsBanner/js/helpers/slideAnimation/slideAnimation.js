@@ -5,7 +5,7 @@ const slideAnimation = async (slide, ref, setSlide, brand) => {
     const removeClass = Object.values(ref.current);
 
     await slideFadeIn(animationEnd, animateRef);
-    await delay(500);
+    await delay(2000);
     await slideFadeOut(animationEnd, animateRef);
     await nextSlide(slide, setSlide, brand, removeClass);
 };

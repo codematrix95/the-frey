@@ -1,0 +1,19 @@
+@mixin fonts($font-name, $weight-name) {
+  $fonts: (
+    maitree: 'Maitree',
+    roboto: 'Roboto'
+  );
+
+  $weights: (
+    extralight: 200,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700
+  );
+
+  font-family: map-get($fonts, $font-name), serif;
+  font-style: normal;
+  font-weight: map-get($weights, $weight-name);
+}

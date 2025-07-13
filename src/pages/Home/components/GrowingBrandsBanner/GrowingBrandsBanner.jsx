@@ -27,8 +27,8 @@ const GrowingBrandsBanner = () => {
 
     return (
         <>
-            <div className="d-flex flex-column flex-md-row my-2 mx-2 px-3 mx-lg-3 px-lg-4">
-                <h2 className="ms-md-auto text-nowrap maitree-regular text-white lh-base">
+            <div className="growing-brands-div d-flex flex-column flex-md-row align-items-lg-center mt-2 mb-4 mx-2 px-3 mx-lg-3 px-lg-4">
+                <h2 className="growing-brands-h2 ms-md-auto text-nowrap maitree-regular text-white lh-base">
                     Growing{' '}
                     <span className="sr-only text-wrap">
                         Healthcare, CRE, and Nonprofit

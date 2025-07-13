@@ -4,30 +4,33 @@
     position: relative;
     display: inline-block;
 
-    &:hover .PageLink {
-        &::before {
-            transform-origin: left;
-            transform: scaleX(1);
+    &:hover {
+        & > span {
+            &::before {
+                transform-origin: left;
+                transform: scaleX(1);
+            }
         }
+
         svg path {
             stroke: $white;
         }
     }
 
-    div {
+    & > span {
         position: absolute;
         left: 2.5%;
         bottom: 5%;
+
+        @media (min-width: 700px) {
+            transform: scale(1.25);
+            transform-origin: top left;
+        }
     }
 
     img {
+        display: block;
         height: auto;
         width: 100%;
     }
-
-    svg {
-        margin-top: 2px;
-    }
 }
-
-

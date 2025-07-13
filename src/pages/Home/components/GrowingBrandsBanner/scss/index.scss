@@ -1,10 +1,29 @@
 @use './mixins/' as *;
 @use './animations/' as *;
 
-h2 {
-    font-size: 2rem;
-    @media (max-width: 535px) {
-        font-size: 1.5rem;
+.growing-brands-div {
+    @media (orientation: landscape) and (min-width: 1100px) {
+        height: calc(100vh - 80px);
+    }
+}
+
+.growing-brands-h2 {
+    font-size: 1.5rem;
+
+    @media (min-width: 535px) {
+        font-size: 1.75rem;
+    }
+
+    @media (min-width: 770px) {
+        margin: 0 0 200px 0;
+    }
+
+    @media (min-width: 900px) {
+        font-size: 2rem;
+    }
+
+    @media (min-width: 1400px) {
+        font-size: 3rem;
     }
 }
 

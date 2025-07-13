@@ -1,15 +1,51 @@
 @use '@scss/colors' as *;
+@use '@scss/mixins' as *;
 
 .section {
+    max-width: 1150px;
     h2 {
         font-size: 1rem;
-        display: inline-block;
-        a {
-            padding-top: 2px;
+
+        @media (min-width: 1100px) {
+            transform: scale(1.25);
+            transform-origin: top left;
         }
     }
 
     p {
         color: $light-grey;
+
+        @include fonts(maitree, regular);
+
+        @media (min-width: 1100px) {
+            line-height: 36px;
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.areas-of-expertise {
+    display: flex;
+    flex-wrap: wrap;
+    color: $white;
+    span {
+        padding: 0 0.3rem 0 0;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 450px) {
+        margin: 5px 0 0 0;
+        max-width: 250px;
+    }
+}
+
+.link-contact-us {
+    position: relative;
+    top: 3.05px;
+    font-size: 14px;
+
+    @media (min-width: 1100px) {
+        top: 2.05px;
+        font-size: 18px;
     }
 }
